@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: paisa
+      POSTGRES_PASSWORD: paisa
+      POSTGRES_DB: paisa
+    ports:
+      - "5432:5432"
+    volumes:
+      - paisa_pg:/var/lib/postgresql/data
+volumes:
+  paisa_pg:

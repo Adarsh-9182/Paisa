@@ -1,0 +1,48 @@
+{
+  "name": "paisa",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Paisa — AI personal-finance agent for India. Tool-grounded: numbers come from SQL, the model only narrates. Runs on seed data.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "db:push": "prisma db push",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:reset": "prisma db push --force-reset && tsx prisma/seed.ts",
+    "db:studio": "prisma studio",
+    "eval": "tsx src/eval/run.ts",
+    "eval:agents": "tsx src/eval/agents.run.ts",
+    "cfo:daily": "tsx src/engine/cli.ts",
+    "setup": "prisma generate && prisma db push && tsx prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.3",
+    "@prisma/client": "^5.16.2",
+    "bcryptjs": "^2.4.3",
+    "jose": "^5.6.3",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8.4.39",
+    "prisma": "^5.16.2",
+    "tailwindcss": "^3.4.6",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  }
+}
